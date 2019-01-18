@@ -5,7 +5,6 @@ MINUTES=15
 TOTAL=$(( $(($HOURS*60)) + $MINUTES )) 
 CHECK_IN=$(cat /home/gabrieln/scripts/actualDate)
 
-# EPOCH_LEFT=$(( `date -d "$CHECK_IN +$TOTAL minutes" +%s` - `date +%s` ))
 EPOCH_LEFT=$(( `date -d "$CHECK_IN" +%s` + $(( $TOTAL * 60 )) - `date +%s` ))
 
 
