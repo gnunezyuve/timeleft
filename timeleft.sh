@@ -1,4 +1,5 @@
 #!/bin/bash
+
 HOURS=7
 MINUTES=15
 

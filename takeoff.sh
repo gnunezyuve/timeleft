@@ -1,3 +1,5 @@
+#!/bin/bash
+
 HOURS=7
 MINUTES=15
 TOTAL=$(( $(($HOURS*60)) + $MINUTES )) 

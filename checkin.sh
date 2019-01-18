@@ -1,3 +1,4 @@
+#!/bin/bash
 
 date +"%Y-%m-%d %H:%M:%S" > $HOME/.config/actualDate
 
