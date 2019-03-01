@@ -7,13 +7,10 @@ TOTAL=$(( $(($HOURS*60)) + $MINUTES ))
 CHECK_IN=$(cat $HOME/.config/actualDate)
 
 EPOCH_LEFT=$(( `date -d "$CHECK_IN" +%s` + $(( $TOTAL * 60 )) - `date +%s` ))
-
-if [ "$EPOCH_LEFT" -lt 0 ]; then
-  EPOCH_LEFT=0
-fi
-
 SECONDS_LEFT=$(( EPOCH_LEFT % 60 ))
 HOURS_LEFT=$(( $EPOCH_LEFT / 60 / 60 ))
 MINUTES_LEFT=$(( EPOCH_LEFT / 60  - HOURS_LEFT *60 ))
 
-date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
+if [ "$EPOCH_LEFT" -gt 0 ]; then
+  date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
+fi
