@@ -10,7 +10,7 @@ SECONDS_LEFT=$(( EPOCH_LEFT % 60 ))
 HOURS_LEFT=$(( $EPOCH_LEFT / 60 / 60 ))
 MINUTES_LEFT=$(( EPOCH_LEFT / 60  - HOURS_LEFT *60 ))
 
-if [ $BLOCK_BUTTON -eq 1 ]; then
+if [ $BLOCK_BUTTON ] && [ $BLOCK_BUTTON -eq 1 ]; then
   notify-send -u normal "Departure: `$HOME/bin/takeoff`" -t 3000
 fi
 
