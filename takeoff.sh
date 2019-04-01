@@ -1,5 +1,6 @@
 #!/bin/bash
-source params
+HOURS=7
+MINUTES=15
 
 TOTAL=$(( $(($HOURS*60)) + $MINUTES )) 
 CHECK_IN=$(cat $HOME/.config/actualDate)

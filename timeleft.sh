@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source params
+HOURS=7
+MINUTES=15
 
 TOTAL=$(( $(($HOURS*60)) + $MINUTES )) 
 CHECK_IN=$(cat $HOME/.config/actualDate)
@@ -15,5 +16,6 @@ if [ $BLOCK_BUTTON ] && [ $BLOCK_BUTTON -eq 1 ]; then
 fi
 
 if [ "$EPOCH_LEFT" -gt 0 ]; then
+  date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
   date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
 fi
