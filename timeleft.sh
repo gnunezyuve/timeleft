@@ -12,10 +12,9 @@ HOURS_LEFT=$(( $EPOCH_LEFT / 60 / 60 ))
 MINUTES_LEFT=$(( EPOCH_LEFT / 60  - HOURS_LEFT *60 ))
 
 if [ $BLOCK_BUTTON ] && [ $BLOCK_BUTTON -eq 1 ]; then
-  notify-send -u normal "Departure: `$HOME/bin/takeoff`" -t 3000
+  notify-send -i appointment -u normal "Departure: `$HOME/bin/takeoff`" -t 3000
 fi
 
 if [ "$EPOCH_LEFT" -gt 0 ]; then
-  date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
   date -d $HOURS_LEFT:$MINUTES_LEFT:$SECONDS_LEFT +"%_H:%M"
 fi
